@@ -1,17 +1,18 @@
 import React , {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
-
+import superagent from 'superagent';
 const Products = props => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState();
 let state ={
     data : data
 }
 
 useEffect(()=>{
-    (async ()=>{
-        await props.category
-         setData(props.category.data)
-         console.log("🚀 ~ file: products.jsx ~ line 13 ~ useEffect ~ props.category.data", props.category)
+    (async()=>{
+        
+        await setData(props.category.data)
+        console.log("🚀 ~ file: products.jsx ~ line 13 ~ useEffect ~ props.category.data", Promise.resolve(props.category))
+         
     })()
 
 }, [props.category])

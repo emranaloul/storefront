@@ -6,7 +6,7 @@ import { electronics, food } from '../store/categories';
 const Category = (props) =>{
     return(
         <>
-        <button type="button" onClick={ async() =>  { await props.food('food')}} >Food</button>
+        <button type="button" onClick={ () =>  { props.food('food')}} >Food</button>
         <button type="button" onClick={() => {props.electronics('electronics')}}>Electronics</button>
         </>
     )
