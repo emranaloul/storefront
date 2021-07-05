@@ -1,8 +1,7 @@
-AppBar{
-    background-color: black;
-
+header{
+    background-color:black;
+    height: 80px;
 }
-
 h1{
     color: white;
     text-align: center;
@@ -11,3 +10,35 @@ h1{
 #category{
     color:black
 }
+
+#cartcon{
+    display:inline-block;
+    position: relative;
+    left: 1700px;
+    bottom: 50px;
+   
+}
+#cart{
+    display:inline-block;
+    color: white;
+    // position: relative;
+    // left: 1800px;
+    // bottom: 80px;
+  
+}
+
+#cart:hover{
+    
+    background-color: aqua;
+}
+
+li{
+    border: 1px solid black;
+    display: block;
+    padding: 15px;
+    background-color:skyblue
+}
+
+// #space{
+//     margin-bottom: 50px;
+// }

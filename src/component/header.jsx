@@ -1,20 +1,31 @@
 import React from 'react';
 import './header.scss'
 import AppBar from '@material-ui/core/AppBar';
+import Cart from './simple-cart'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: `
+     display: inline;
+     float left;
+    `,
+  });
 
 
 const Header = ()=>{
 
     return (
         <React.Fragment>
-        <AppBar>
-        
+        {/* <AppBar className={useStyles.root}>
+        </AppBar> */}
+        <header>
         <h1>
            FrontStore
         </h1>
+        <Cart/>
+       
 
-        </AppBar>
-        <br></br>
+        </header>
         </React.Fragment>
     )
 }

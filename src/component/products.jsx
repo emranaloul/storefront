@@ -13,6 +13,8 @@ import Button from "@material-ui/core/Button";
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+import { add, remove} from '../store/cart'
+
 const useStyles2 = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -48,8 +50,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Products = (props) => {
+console.log("🚀 ~ file: products.jsx ~ line 51 ~ Products ~ props", props)
     const classes = useStyles();
     const classes2 = useStyles2();
+
+    const addHandler = (val,e) =>{
+     e.preventDefault();
+      props.add(val)
+    }
 
   return (      
     <React.Fragment>
@@ -73,7 +81,7 @@ const Products = (props) => {
       />
       <CardMedia
         className={classes.media}
-        image={val.image}
+        image={ `https://source.unsplash.com/random?${val.name}&quot` }
         title={val.name}
       />
      <CardHeader
@@ -84,7 +92,7 @@ const Products = (props) => {
         title={val.name}
       />
   
-    <Button size="small" color="primary">
+    <Button size="small" color="primary" onClick={(e) =>addHandler(val,e)}>
                 Add To Cart
                </Button>
                <Button size="small" color="primary">
@@ -104,8 +112,9 @@ const Products = (props) => {
 const mapStateToProps = (state) => ({
   category: state.category,
 });
+const mapDispatchToProps = {add, remove};
 
-export default connect(mapStateToProps)(Products);
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
 
 
 

@@ -37,6 +37,6 @@ const mapStateToProps = (state) =>({
 })
 const mapDispatchToProps = {electronics, food};
 
-
+ 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
