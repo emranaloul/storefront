@@ -1,18 +1,21 @@
 import React from 'react';
-import './header.scss'
+import './header.css'
+import AppBar from '@material-ui/core/AppBar';
+
 
 const Header = ()=>{
 
     return (
-        <>
-        <header>
-
+        <React.Fragment>
+        <AppBar>
+        
         <h1>
            FrontStore
         </h1>
 
-        </header>
-        </>
+        </AppBar>
+        <br></br>
+        </React.Fragment>
     )
 }
 

@@ -4,7 +4,6 @@ import './index.scss';
 import App from './App';
 import {Provider} from 'react-redux';
 import store from './store';
-console.log("🚀 ~ file: index.js ~ line 7 ~ store", store)
 
 ReactDOM.render(
   <React.StrictMode>
