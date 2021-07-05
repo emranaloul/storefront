@@ -1,4 +1,3 @@
-import superagent from "superagent";
 
 let data = {
   count: 20,
