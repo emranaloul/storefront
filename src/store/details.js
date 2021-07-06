@@ -15,7 +15,6 @@ export default (state= initialState, action)=>{
 }
 
 export const view = payload =>{
-console.log("🚀 ~ file: details.js ~ line 18 ~ payload", payload)
     return {
         type: 'view',
         payload: payload

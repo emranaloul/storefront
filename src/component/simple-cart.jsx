@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 
 import {add,remove} from '../store/cart'
 const SimpleCart = (props) =>{    
-console.log("🚀 ~ file: simple-cart.jsx ~ line 8 ~ SimpleCart ~ props", props.match)
     return (
         <>
         <div id="cartcon">
