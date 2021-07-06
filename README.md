@@ -1,8 +1,9 @@
 # storefront
 
-## Lab 37
+## Lab 38
 
 ## Author: Emran Aloul
+
 ## Deployment 
 [Netlify](https://60e39e82a3ec23578bdc5c8a--modest-lovelace-b7d5e7.netlify.app/)
 
@@ -12,4 +13,4 @@
 
 ### UML 
 
-![UML](uml2.png)
+![UML](uml3.png)

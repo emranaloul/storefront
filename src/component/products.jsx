@@ -7,7 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
 import Button from "@material-ui/core/Button";
-
+import {Link} from 'react-router-dom'
+import {view} from '../store/details';
 
 // import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -95,7 +96,7 @@ console.log("🚀 ~ file: products.jsx ~ line 51 ~ Products ~ props", props)
     <Button size="small" color="primary" onClick={(e) =>addHandler(val,e)}>
                 Add To Cart
                </Button>
-               <Button size="small" color="primary">
+               <Button size="small" color="primary" component={Link} to={`/product/${val._id}`} onClick={() =>props.view(val)}>
                 View Details
                </Button>
             </div></Paper>
@@ -112,7 +113,7 @@ console.log("🚀 ~ file: products.jsx ~ line 51 ~ Products ~ props", props)
 const mapStateToProps = (state) => ({
   category: state.category,
 });
-const mapDispatchToProps = {add, remove};
+const mapDispatchToProps = {add, remove, view};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
 

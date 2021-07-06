@@ -3,6 +3,7 @@ import './header.scss'
 import AppBar from '@material-ui/core/AppBar';
 import Cart from './simple-cart'
 import { makeStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: `
@@ -20,7 +21,9 @@ const Header = ()=>{
         </AppBar> */}
         <header>
         <h1>
+            <Link  to="/">
            FrontStore
+            </Link>
         </h1>
         <Cart/>
        

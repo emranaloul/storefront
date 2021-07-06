@@ -1,3 +1,7 @@
+import superagent from 'superagent';
+
+const API = 'https://api-js401.herokuapp.com/api/v1/products';
+
 let initialState = {
     results: []
 }
@@ -22,18 +26,28 @@ export default (state = initialState, action) =>{
     }
 }
 
-export const add = (payload) =>{
-return {
-    type: 'ADD',
-    payload: payload
-}
-
-}
-
-export const remove = (payload) =>{
-    return {
-        type: 'REMOVE',
-        payload: payload
+export const add = (payload) => (dispatch) => {
+    let body = {
+        inStock: payload.inStock - 1, 
     }
+    return superagent.put(`${API}/${payload._id}`).send(body).then((res) =>{
+        dispatch({
+            type: 'ADD',
+            payload: res.body
+        })
+    })
+
+}
+
+export const remove = (payload) => (dispatch) => {
+    let body = {
+        inStock: payload.inStock + 1, 
+    }
+    return superagent.put(`${API}/${payload._id}`).send(body).then((res) =>{
+        dispatch({
+            type: 'REMOVE',
+            payload: res.body
+        })
+    })
     
     }
