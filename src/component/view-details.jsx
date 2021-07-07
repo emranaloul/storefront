@@ -1,14 +1,19 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import { connect } from 'react-redux';
 import Button from "@material-ui/core/Button";
 import {add,remove} from '../store/cart'
 import './view-details.scss'
 
-function render(props) {
+const ViewDetails = (props) => {
+console.log("🚀 ~ file: view-details.jsx ~ line 8 ~ ViewDetails ~ props", props.details.inStock)
 
-console.log("🚀 ~ file: view-details.jsx ~ line 7 ~ render ~ props", props.details)
-let item = props.details
+const [item, setItem] = useState({})
+// console.log("🚀 ~ file: view-details.jsx ~ line 7 ~ render ~ props", props.details)
 
+useEffect(()=>{
+    console.log('hello')
+   setItem(props.details);
+}, [props.details.inStock])
     
     return (
         <div id="view-item">
@@ -24,4 +29,4 @@ const mapStateToProps = state =>({
     details :state.details ,
 })
 const mapDispatchToProps = {add, remove };
-export default connect(mapStateToProps,mapDispatchToProps)(render)
+export default connect(mapStateToProps,mapDispatchToProps)(ViewDetails)
