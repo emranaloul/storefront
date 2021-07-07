@@ -26,11 +26,10 @@ export default (state = initialState, action) =>{
     }
 }
 
-export const add = (payload) => (dispatch) => {
-    let body = {
-        inStock: payload.inStock - 1, 
-    }
-    return superagent.put(`${API}/${payload._id}`).send(body).then((res) =>{
+export const add = (payload) => (dispatch,state) => {
+    payload.inStock = payload.inStock - 1
+    
+    return superagent.put(`${API}/${payload._id}`).send(payload).then((res) =>{
         dispatch({
             type: 'ADD',
             payload: res.body
@@ -39,11 +38,10 @@ export const add = (payload) => (dispatch) => {
 
 }
 
-export const remove = (payload) => (dispatch) => {
-    let body = {
-        inStock: payload.inStock + 1, 
-    }
-    return superagent.put(`${API}/${payload._id}`).send(body).then((res) =>{
+export const remove = (payload) => (dispatch,state) => {
+    payload.inStock = payload.inStock + 1
+
+    return superagent.put(`${API}/${payload._id}`).send(payload).then((res) =>{
         dispatch({
             type: 'REMOVE',
             payload: res.body

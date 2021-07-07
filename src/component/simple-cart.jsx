@@ -4,22 +4,25 @@ import Button from "@material-ui/core/Button";
 import {Link} from 'react-router-dom';
 
 import {add,remove} from '../store/cart'
+import {view} from '../store/details'
 const SimpleCart = (props) =>{    
     return (
         <>
         <div id="cartcon">
         <Button id='cart' component={Link} to="/cart">Cart({ props.cart? props.cart.results.length : 0})</Button>
         {/* <h4 id='cart' component={Link} to='/cart'>Cart({ props.cart? props.cart.results.length : 0})</h4> */}
-        <ul>
+        <ul id="cartul">
         {props.cart.results?props.cart.results.map(val =>
-            <li key={val._id}><h5 >{val.name}</h5>
-           <button onClick={() =>props.remove(val)}>
+            <li key={val._id}><h5 id="carhead"> <Button size="small" color="primary" component={Link} to={`/product/${val._id}`} onClick={() =>props.view(val)}>
+            {val.name}
+           </Button> </h5>
+           <Button onClick={() =>props.remove(val)}>
                X
-           </button>
+           </Button>
            <span> </span>
-           <button onClick={() =>props.add(val)}>
+           <Button onClick={() =>props.add(val)}>
                +
-           </button>
+           </Button>
             </li>
             ):null}
             </ul>
@@ -34,6 +37,6 @@ const mapStateToProps = (state) =>({
     cart: state.cart
 })
 
-const mapDispatchToProps = {add, remove};
+const mapDispatchToProps = {add, remove, view};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

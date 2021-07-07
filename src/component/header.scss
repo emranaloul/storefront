@@ -32,11 +32,22 @@ h1{
     background-color: aqua;
 }
 
+#cartul{
+    border: 1px dashed black;
+    background-color: rgb(229, 219, 248);
+    padding: 0
+}
+
 li{
-    border: 1px solid black;
+    // border: 1px solid black;
     display: block;
-    padding: 15px;
-    background-color:skyblue
+    // padding: 7px;
+    // background-color: rgb(229, 219, 248);
+    height: 70px;
+}
+
+#carhead{
+    display: inline-block;
 }
 
 // #space{
