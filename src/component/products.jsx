@@ -73,7 +73,7 @@ console.log("🚀 ~ file: products.jsx ~ line 51 ~ Products ~ props", props)
       <Grid container spacing={3}>
       {
       props.category
-        ?   props.category.data.map((val) => (
+        ?   props.category.map((val) => (
 
             <Grid item xs={3}>
             <Paper className={classes2.paper}>  <div key={val._id} id="card">

@@ -5,7 +5,8 @@
 #ordersummery{
     border: 1px solid black;
     width: 30%;
-    margin:auto
+    margin:auto;
+    // align-items: center;
 }
 #price{
     color: grey; 
@@ -13,5 +14,12 @@
 
 #orderD{
     display: flex;
-    justify-content:space-around
+    justify-content:space-around;
+}
+
+#orderDD{
+    display: flex;
+    justify-content:space-around;
+    padding:10px;
+
 }
